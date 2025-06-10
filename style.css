@@ -1,0 +1,797 @@
+/* style.css - Adicione ou atualize estas regras */
+
+/* Estilos gerais */
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', 'Poppins', Arial, sans-serif; /* Fonte infantil */
+    color: #333;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Fundo geral para as telas de jogo - padrão (será sobrescrito) */
+body.background-gemini {
+    background-image: url('assets/images/background/fundo_infantil.jpg'); /* Fundo padrão, você pode escolher um genérico */
+}
+
+/* Fundo específico para o módulo de Português */
+body.background-portugues {
+    background-image: url('assets/images/background/background_portugues.jpg'); /* Caminho para sua imagem de português */
+}
+
+/* Fundo específico para o módulo de Matemática */
+body.background-matematica {
+    background-image: url('assets/images/background/background_matematica.jpg'); /* Caminho para sua imagem de matemática */
+}
+
+/* Fundo específico para o módulo de Fonética */
+body.background-fonetica {
+    background-image: url('assets/images/background/background_fonetica.jpg'); /* Caminho para sua imagem de fonética */
+}
+
+/* Container principal dos jogos e home */
+.container {
+    background: rgba(255,255,255,0.95);
+    border-radius: 32px;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.18);
+    margin: 40px auto;
+    padding: 40px 24px;
+    max-width: 760px; /* Aumentado para melhor visualização do conteúdo */
+    width: 90%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espaçamento entre os elementos do container */
+}
+
+.container-inicio {
+    min-height: 500px; /* Altura mínima para a tela inicial */
+}
+
+.container-jogo {
+    min-height: 600px; /* Altura mínima para as telas de jogo */
+    justify-content: flex-start;
+}
+
+h1, h2 {
+    color: #ff7f50; /* Cor vibrante para títulos */
+    font-weight: bold;
+    text-shadow: 2px 2px 0 rgba(255,255,255,0.7); /* Sombra suave para destacar */
+    font-size: 2.5em; /* Tamanho maior para títulos */
+    margin-bottom: 20px;
+}
+
+h3 {
+    color: #6a5acd; /* Cor secundária para subtítulos */
+    font-size: 1.5em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Botões de navegação e ação */
+button, .botao-area, .botao-voltar {
+    background: linear-gradient(90deg, #ffb347, #ffcc33); /* Gradiente vibrante */
+    color: #222;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 18px; /* Bordas bem arredondadas */
+    margin: 10px auto;
+    padding: 18px 0;
+    width: 85%; /* Largura ajustável */
+    max-width: 320px; /* Largura máxima para botões */
+    box-shadow: 0 3px 12px rgba(255,179,71,0.5); /* Sombra com cor do gradiente */
+    transition: transform 0.1s, box-shadow 0.2s; /* Transição suave */
+    cursor: pointer;
+    text-decoration: none; /* Remover sublinhado de links */
+    display: flex; /* Para centralizar conteúdo e ícone */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover, .botao-area:hover, .botao-voltar:hover {
+    background: linear-gradient(90deg, #ffcc33, #ffb347); /* Inverter gradiente no hover */
+    transform: scale(1.04); /* Pequeno zoom */
+    box-shadow: 0 6px 18px rgba(255,179,71,0.6); /* Sombra mais intensa */
+}
+
+/* Estilos específicos para botões de área na página inicial */
+.botoes-area {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    justify-content: center;
+    gap: 25px; /* Espaçamento entre os botões */
+    margin-top: 30px;
+}
+
+.botao-area {
+    width: 200px; /* Largura fixa para os botões de área */
+    height: 100px; /* Altura fixa */
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.botao-area .icone {
+    font-size: 2.2em; /* Tamanho maior para ícones */
+    margin-bottom: 5px;
+}
+
+/* Cores específicas para botões de área */
+.botao-portugues { background: linear-gradient(90deg, #6dd5ed, #2193b0); box-shadow: 0 3px 12px rgba(109,213,237,0.5); }
+.botao-portugues:hover { background: linear-gradient(90deg, #2193b0, #6dd5ed); box-shadow: 0 6px 18px rgba(109,213,237,0.6); }
+
+.botao-matematica { background: linear-gradient(90deg, #f7b731, #fbd786); box-shadow: 0 3px 12px rgba(247,183,49,0.5); }
+.botao-matematica:hover { background: linear-gradient(90deg, #fbd786, #f7b731); box-shadow: 0 6px 18px rgba(247,183,49,0.6); }
+
+.botao-fonetica { background: linear-gradient(90deg, #a770ef, #cf8bf3); box-shadow: 0 3px 12px rgba(167,112,239,0.5); }
+.botao-fonetica:hover { background: linear-gradient(90deg, #cf8bf3, #a770ef); box-shadow: 0 6px 18px rgba(167,112,239,0.6); }
+
+
+/* Seleção de Dificuldade */
+.selecao-dificuldade {
+    margin-top: 30px;
+    border-top: 2px dashed #ccc;
+    padding-top: 20px;
+}
+
+.selecao-dificuldade h2 {
+    font-size: 1.8em;
+    color: #6a5acd;
+    margin-bottom: 15px;
+}
+
+.botao-dificuldade {
+    background: #e0e0e0;
+    color: #555;
+    border: 2px solid #ccc;
+    box-shadow: none;
+    font-size: 1.1em;
+    width: 100px;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 12px;
+}
+
+.botao-dificuldade.selecionado {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border-color: #007bff;
+    box-shadow: 0 2px 8px rgba(0,123,255,0.4);
+    transform: scale(1.05);
+}
+
+.botao-dificuldade:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.botao-dificuldade.selecionado:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.6);
+}
+
+/* Animação para seleção de dificuldade */
+@keyframes animacaoSelecao {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.animacao-selecao {
+    animation: animacaoSelecao 0.5s ease-in-out;
+}
+
+/* Estilos para feedback */
+.feedback {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+    display: none; /* Escondido por padrão, mostrado via JS */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.feedback h2 {
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.feedback p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.feedback-correto {
+    background-color: #e6ffed;
+    color: #28a745;
+    border: 3px solid #28a745;
+    box-shadow: 0 0 15px rgba(40,167,69,0.3);
+    animation: pulse-green 0.5s ease-out;
+}
+
+.feedback-incorreto {
+    background-color: #ffe6e6;
+    color: #dc3545;
+    border: 3px solid #dc3545;
+    box-shadow: 0 0 15px rgba(220,53,69,0.3);
+    animation: shake 0.5s ease-out;
+}
+
+.feedback-dica {
+    background-color: #fff3e0;
+    color: #ff9800;
+    border: 3px solid #ff9800;
+    box-shadow: 0 0 15px rgba(255,152,0,0.3);
+}
+
+@keyframes pulse-green {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+    100% { transform: translateX(0); }
+}
+
+/* Botão de voltar */
+.botao-voltar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 2em;
+    line-height: 50px;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-voltar:hover {
+    transform: scale(1.1);
+}
+
+/* Botão de dica */
+.botao-dica {
+    background: linear-gradient(90deg, #4CAF50, #8bc34a);
+    color: white;
+    box-shadow: 0 3px 12px rgba(76,175,80,0.5);
+    max-width: 250px;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin-top: 20px;
+}
+
+.botao-dica:hover {
+    background: linear-gradient(90deg, #8bc34a, #4CAF50);
+    box-shadow: 0 6px 18px rgba(76,175,80,0.6);
+}
+
+/* Botão de áudio */
+.botao-audio {
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: #333;
+    box-shadow: 0 3px 12px rgba(255,215,0,0.5);
+    max-width: 250px;
+    font-size: 1.1em;
+    padding: 12px 20px;
+    margin-top: 20px;
+}
+
+.botao-audio:hover {
+    background: linear-gradient(90deg, #FFA500, #FFD700);
+    box-shadow: 0 6px 18px rgba(255,215,0,0.6);
+}
+
+.botao-audio span, .botao-dica span {
+    font-size: 1.2em; /* Tamanho do ícone */
+    margin-right: 5px;
+}
+
+/* Progresso */
+.progresso-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.progresso-texto {
+    font-size: 1.1em;
+    color: #6a5acd;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.progresso-barra {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    height: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.progresso-preenchimento {
+    height: 100%;
+    width: 0%;
+    background-color: #4CAF50; /* Cor de preenchimento */
+    border-radius: 10px;
+    transition: width 0.5s ease-out;
+}
+
+/* Mensagens de erro */
+.erro-container {
+    background-color: #ffe6e6;
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.erro-container p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.erro-detalhe {
+    font-size: 0.9em;
+    color: #8b0000;
+}
+
+.botao-tentar {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 1em;
+    margin-top: 15px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button, .botao-area, .botao-voltar {
+        font-size: 1.1em;
+        padding: 15px 0;
+        max-width: 90%;
+    }
+
+    .botao-area {
+        width: 150px;
+        height: 80px;
+        font-size: 0.9em;
+    }
+
+    .botao-area .icone {
+        font-size: 1.8em;
+    }
+
+    .botao-voltar {
+        top: 10px;
+        left: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+    }
+
+    .selecao-dificuldade h2 {
+        font-size: 1.5em;
+    }
+
+    .botao-dificuldade {
+        width: 80px;
+        font-size: 1em;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .botoes-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botao-area {
+        width: 85%;
+        max-width: 250px;
+    }
+}
+
+
+/* Estilos específicos para o módulo de fonética */
+.palavra-container {
+    font-size: 2.5em;
+    margin: 20px 0;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #333;
+}
+
+.lacuna {
+    border-bottom: 3px solid #ff7f50; /* Cor da lacuna em destaque */
+    padding: 0 5px;
+    margin: 0 2px;
+    color: #ff6347;
+    font-weight: bold;
+}
+
+.imagem-palavra {
+    max-width: 200px;
+    max-height: 200px;
+    margin: 15px auto;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra mais destacada */
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo sutil */
+    padding: 10px;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+}
+
+.opcoes-fonetica {
+    display: grid; /* Usar grid para melhor alinhamento */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Colunas responsivas */
+    gap: 15px;
+    margin: 25px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.botao-fonetica {
+    padding: 15px 20px;
+    font-size: 1.4em; /* Fonte maior */
+    background: linear-gradient(45deg, #a770ef, #cf8bf3); /* Cor do módulo de fonética */
+    color: white;
+    border: none; /* Remover borda */
+    border-radius: 15px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(167,112,239,0.4);
+}
+
+.botao-fonetica:hover, .botao-fonetica:focus {
+    background: linear-gradient(45deg, #cf8bf3, #a770ef);
+    transform: translateY(-5px); /* Pequeno levantamento */
+    box-shadow: 0 8px 20px rgba(167,112,239,0.6);
+}
+
+.destaque-acerto {
+    color: #4caf50;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Sombra mais visível */
+}
+
+.destaque-erro {
+    color: #f44336;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(244, 67, 54, 0.5);
+}
+
+.explicacao {
+    background-color: rgba(245, 245, 245, 0.9); /* Fundo mais suave */
+    border-left: 6px solid #0056b3; /* Borda mais grossa */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-size: 1.2em;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tipo-fonetico {
+    font-weight: bold;
+    color: #0056b3;
+    text-shadow: 0 0 3px rgba(0,86,179,0.2);
+}
+
+/* Animação para feedback */
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.animacao-pulsar {
+    animation: pulsar 0.5s ease infinite;
+}
+
+/* Responsividade para telas menores (Fonetica) */
+@media (max-width: 768px) {
+    .palavra-container {
+        font-size: 2em;
+    }
+
+    .imagem-palavra {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .botao-fonetica {
+        padding: 12px 15px;
+        font-size: 1.2em;
+    }
+
+    .opcoes-fonetica {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    .explicacao {
+        font-size: 1em;
+        padding: 15px;
+    }
+}
+
+/* Estilos para o destaque da palavra no módulo de Português */
+.frase-destaque {
+    font-size: 1.8em;
+    margin: 20px 0;
+    line-height: 1.4;
+    color: #444;
+}
+.destaque-palavra {
+    color: #FF6347; /* Cor vibrante para destaque, ex: laranja/vermelho */
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2); /* Sutil sombra para maior contraste */
+}
+
+/* Botões de opção em Português */
+.opcoes-portugues {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.botao-portugues {
+    padding: 18px 25px;
+    font-size: 1.4em;
+    background: linear-gradient(45deg, #6dd5ed, #2193b0); /* Cor do módulo de Português */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(109,213,237,0.4);
+}
+
+.botao-portugues:hover {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(109,213,237,0.6);
+}
+
+/* Imagens de operação em Matemática */
+.imagem-operacao {
+    max-width: 200px; /* Tamanho da imagem */
+    max-height: 200px;
+    margin: 15px auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    object-fit: contain;
+}
+
+.opcoes-matematica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+    margin: 25px 0;
+    width: 100%;
+    max-width: 600px;
+}
+
+.botao-matematica {
+    padding: 15px 20px;
+    font-size: 1.5em;
+    background: linear-gradient(45deg, #f7b731, #fbd786); /* Cor do módulo de Matemática */
+    color: #333;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(247,183,49,0.4);
+}
+
+.botao-matematica:hover {
+    background: linear-gradient(45deg, #fbd786, #f7b731);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(247,183,49,0.6);
+}
+
+/* Estilos para o modo escrita em Português */
+.escrita-imagem {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    object-fit: contain;
+}
+
+.escrita-input-container {
+    display: flex;
+    flex-direction: column; /* Para empilhar input e botão em telas menores */
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+#escrita-input {
+    padding: 15px 20px;
+    font-size: 1.5em;
+    border: 3px solid #6dd5ed; /* Cor do módulo de Português */
+    border-radius: 12px;
+    width: 80%;
+    max-width: 350px;
+    text-align: center;
+    text-transform: lowercase; /* Sugestão: padronizar entrada para minúsculas */
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#escrita-input:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 0 4px rgba(33,147,176,0.2);
+    outline: none;
+}
+
+.botao-verificar {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    background: linear-gradient(90deg, #4CAF50, #8bc34a);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(76,175,80,0.5);
+    max-width: 200px;
+    width: 100%;
+}
+
+.botao-verificar:hover {
+    background: linear-gradient(90deg, #8bc34a, #4CAF50);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(76,175,80,0.6);
+}
+
+.escrita-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feedback.feedback-incorreto, .feedback.feedback-correto, .feedback.feedback-dica {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.tentativas {
+    margin-top: 15px;
+    font-size: 1em;
+    color: #666;
+    font-weight: bold;
+}
+
+/* Modos de Jogo Botões */
+.modos-container {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.botao-modo {
+    flex: 1; /* Distribui o espaço igualmente */
+    padding: 12px 20px;
+    font-size: 1.2em;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    white-space: nowrap; /* Evita quebra de texto */
+}
+
+.botao-modo.modo-ativo {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.4);
+    transform: translateY(-3px);
+}
+
+.botao-modo:hover:not(.modo-ativo) {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Ajuste para telas menores nos modos de jogo */
+@media (max-width: 600px) {
+    .modos-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .botao-modo {
+        max-width: 80%; /* Ocupa mais largura em telas pequenas */
+        padding: 10px 15px;
+        font-size: 1.1em;
+    }
+    .escrita-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #escrita-input {
+        width: 95%;
+        font-size: 1.3em;
+    }
+    .botao-verificar {
+        width: 80%;
+        max-width: 250px;
+        font-size: 1.1em;
+    }
+    .escrita-botoes {
+        flex-direction: column;
+        align-items: center;
+    }
+    .escrita-botoes .botao-dica, .escrita-botoes .botao-audio {
+        width: 80%;
+        max-width: 250px;
+    }
+}

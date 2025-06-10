@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateuszinho Aventura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Jogo educativo para crianças com PAC (Processamento Auditivo Central)">
+</head>
+<body class="background-gemini">
+    <div class="container container-inicio">
+        <h1>Bem-vindo ao Mateuszinho Aventura!</h1>
+        <p>Escolha uma área para começar a aprender e se divertir:</p>
+
+        <div class="botoes-area">
+            <a href="portugues.html" class="botao-area botao-portugues" aria-label="Área de Português">
+                <span class="icone">📚</span>
+                <span>Português</span>
+            </a>
+            <a href="matematica.html" class="botao-area botao-matematica" aria-label="Área de Matemática">
+                <span class="icone">➗</span>
+                <span>Matemática</span>
+            </a>
+            <a href="fonetica.html" class="botao-area botao-fonetica" aria-label="Desafio dos Sons">
+                <span class="icone">🔊</span>
+                <span>Desafio dos Sons</span>
+            </a>
+        </div>
+
+        <div class="selecao-dificuldade">
+            <h2>Escolha a dificuldade:</h2>
+            <div class="botoes-dificuldade-container">
+                <button class="botao-dificuldade" data-dificuldade="easy" aria-pressed="true">Fácil</button>
+                <button class="botao-dificuldade" data-dificuldade="medium" aria-pressed="false">Médio</button>
+                <button class="botao-dificuldade" data-dificuldade="hard" aria-pressed="false">Difícil</button>
+            </div>
+        </div>
+
+        <div class="info-jogo">
+            <h3>Sobre o Jogo</h3>
+            <p>O Mateuszinho Aventura é um jogo educativo especialmente desenvolvido para crianças com Processamento Auditivo Central (PAC), combinando estímulos visuais e auditivos para uma experiência de aprendizado divertida e eficaz.</p>
+            <p>Escolha entre desafios de Português, Matemática e o novo Desafio dos Sons, e ajuste a dificuldade conforme sua necessidade!</p>
+        </div>
+
+    </div>
+
+    <script src="config.js"></script>
+    <script src="log.js"></script>
+    <script src="lib/howler.min.js"></script>
+    <script src="audio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

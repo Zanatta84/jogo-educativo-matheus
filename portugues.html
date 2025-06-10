@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Português - Mateuszinho Aventura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Módulo de Português do jogo educativo para crianças com PAC (Processamento Auditivo Central)">
+</head>
+<body class="background-gemini background-portugues">
+    <div class="container container-jogo">
+        <a href="index.html" class="botao-voltar" aria-label="Voltar ao início">←</a>
+        <h1>Desafios de Português</h1>
+
+        <div class="modos-container">
+            <button id="btn-multipla-escolha" class="botao-modo modo-ativo">Múltipla Escolha</button>
+            <button id="btn-escrita" class="botao-modo">Escrita</button>
+        </div>
+
+        <div id="jogo-portugues-multipla-escolha" class="jogo-modulo-container">
+            <p>Carregando desafio de Português (Múltipla Escolha)...</p>
+        </div>
+
+        <div id="escrita-container" class="jogo-modulo-container" style="display: none;">
+            <p>Carregando desafio de Português (Escrita)...</p>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="log.js"></script>
+    <script src="lib/howler.min.js"></script>
+    <script src="audio.js"></script>
+    <script src="data_portugues.js"></script>
+    <script src="portugues.js"></script>
+</body>
+</html>
