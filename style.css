@@ -37,6 +37,11 @@ body.background-fonetica {
     background-image: url('assets/images/background/background_fonetica.jpg'); /* Caminho para sua imagem de fonética */
 }
 
+/* Fundo específico para o módulo do Alfabeto */
+body.background-alfabeto {
+    background-image: url('assets/images/background/background.png'); /* Fundo genérico para o alfabeto */
+}
+
 /* Container principal dos jogos e home */
 .container {
     background: rgba(255,255,255,0.95);
@@ -144,6 +149,9 @@ button:hover, .botao-area:hover, .botao-voltar:hover {
 
 .botao-fonetica { background: linear-gradient(90deg, #a770ef, #cf8bf3); box-shadow: 0 3px 12px rgba(167,112,239,0.5); }
 .botao-fonetica:hover { background: linear-gradient(90deg, #cf8bf3, #a770ef); box-shadow: 0 6px 18px rgba(167,112,239,0.6); }
+
+.botao-alfabeto { background: linear-gradient(90deg, #ff9a9e, #fad0c4); box-shadow: 0 3px 12px rgba(255,154,158,0.5); }
+.botao-alfabeto:hover { background: linear-gradient(90deg, #fad0c4, #ff9a9e); box-shadow: 0 6px 18px rgba(255,154,158,0.6); }
 
 
 /* Seleção de Dificuldade */
@@ -759,6 +767,25 @@ button:hover, .botao-area:hover, .botao-voltar:hover {
     background-color: #e9ecef;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Estilos para o módulo do Alfabeto */
+#jogo-alfabeto .letra {
+    font-size: 5em;
+    display: block;
+    margin: 20px 0;
+    color: #333;
+}
+
+#jogo-alfabeto .palavra {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.controles-alfabeto button {
+    margin: 5px;
 }
 
 /* Ajuste para telas menores nos modos de jogo */
